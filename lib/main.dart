@@ -5,7 +5,8 @@ import 'theme_provider.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
-void main() {
+void main() async {
+  await WidgetsFlutterBinding.ensureInitialized();
   tz.initializeTimeZones();
   runApp(const MyApp());
 }

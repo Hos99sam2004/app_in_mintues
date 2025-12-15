@@ -22,7 +22,7 @@ class ThemeProvider with ChangeNotifier {
   Color get primaryColor {
     switch (_colorScheme) {
       case 'default':
-        return Color(0xFFD4AF37);
+        return Color(0xFFD3C0A6);
       case 'purple':
         return Colors.purple;
       case 'orange':

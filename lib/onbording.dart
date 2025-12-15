@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/LoginScreen.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class Onbording extends StatefulWidget {
   const Onbording({super.key});
@@ -19,13 +20,14 @@ class _OnbordingState extends State<Onbording> {
           decoration: const BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
-              // stops: [0.1, 0.4, 0.7, 0.9],
               end: Alignment.bottomCenter,
               colors: [
-                Color(0xFF000000), // أسود
-                Color(0xFF2B1B0E), // بني غامق (ذهبي مطفي)
-                Color(0xFF6E4B1F), // ذهبي غامق
-                Color(0xFFD4AF37), // ذهبي
+                Color(0xFF726452),
+                Color(0xFFAB9880),
+                Color(0xFFD9C9B2),
+                Color(0xFFD3C0A6),
+                Color(0xFFD5C5AD),
+                Color(0xFFE9DCCF),
               ],
             ),
           ),
@@ -35,7 +37,7 @@ class _OnbordingState extends State<Onbording> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  SizedBox(height: 10, width: double.infinity),
+                  SizedBox(height: 15),
                   Row(
                     children: [
                       IconButton(
@@ -49,8 +51,8 @@ class _OnbordingState extends State<Onbording> {
                         },
                         icon: Icon(
                           Icons.arrow_back,
-                          color: Colors.white,
-                          size: 35,
+                          color: Colors.brown,
+                          size: 30,
                         ),
                       ),
                       Spacer(),
@@ -58,30 +60,60 @@ class _OnbordingState extends State<Onbording> {
                         height: 100,
                         width: 100,
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          color: Colors.grey[300],
+                          borderRadius: BorderRadius.circular(20),
+                          color: Colors.transparent,
                           image: DecorationImage(
-                            image: AssetImage("assets/logoElkollaya.jpg"),
+                            image: AssetImage("assets/شعار جامعة المنوفية.png"),
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ),
+                      Spacer(),
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(45),
+                          color: Colors.transparent,
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/photo_2025-12-15_23-57-45-removebg-preview copy.png",
+                            ),
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                      ),
+                      Spacer(),
+
+                      Container(
+                        height: 100,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(45),
+                          color: Colors.transparent,
+                          image: DecorationImage(
+                            image: AssetImage("assets/شعار الجامعة222.png"),
                             fit: BoxFit.fill,
                           ),
                         ),
                       ),
                     ],
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   Text(
                     "اعداد الطالبة : مريم جمال شرف ",
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 26,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.brown,
                     ),
                   ),
+                  SizedBox(height: 15),
                   Container(
-                    height: 200,
-                    width: 250,
+                    height: 180,
+                    width: 220,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(25),
                       color: Colors.grey[300],
                       image: DecorationImage(
                         image: AssetImage("assets/Maryam.jpg"),
@@ -89,41 +121,126 @@ class _OnbordingState extends State<Onbording> {
                       ),
                     ),
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 10),
                   Text(
                     "مريم جمال شرف ",
                     style: TextStyle(
                       fontSize: 20,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.brown,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 20),
+                  SizedBox(height: 15),
                   Text(
-                    "تحت اشراف    \n دكتور : اسلام قنديل\n دكتور : صافى حسين \n دكتور : سما حجازى ",
+                    "تحت اشراف",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 22,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: Colors.brown,
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: 20),
-                  // Container(
-                  //   height: 250,
-                  //   width: 300,
-                  //   decoration: BoxDecoration(
-                  //     borderRadius: BorderRadius.circular(20),
-                  //     color: Colors.grey[300],
-                  //     image: DecorationImage(
-                  //       image: AssetImage("assets/Aslam.jpg"),
-                  //       fit: BoxFit.fill,
-                  //     ),
-                  //   ),
-                  // ),
-
-                  // Image.asset("assets/اسلام.jpg"),
+                  SizedBox(height: 15),
+                  CarouselSlider(
+                    options: CarouselOptions(
+                      height: 280.0,
+                      autoPlay: true,
+                      enlargeCenterPage: true,
+                      aspectRatio: 16 / 9,
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enableInfiniteScroll: true,
+                      autoPlayAnimationDuration: Duration(milliseconds: 800),
+                      viewportFraction: 0.9,
+                      autoPlayInterval: Duration(seconds: 3),
+                      scrollDirection: Axis.horizontal,
+                      pauseAutoPlayOnTouch: true,
+                    ),
+                    items: [
+                      // Doctor 1: Islam Qandeel
+                      Column(
+                        children: [
+                          Container(
+                            height: 200,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: Colors.grey[300],
+                              image: DecorationImage(
+                                image: AssetImage("assets/Aslam.jpg"),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "دكتور : اسلام قنديل",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.brown,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                      // Doctor 2: Safi Hussein
+                      Column(
+                        children: [
+                          Container(
+                            height: 200,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: Colors.grey[300],
+                              image: DecorationImage(
+                                image: AssetImage("assets/safye.jpg"),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "دكتور : صافى حسين",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.brown,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                      // Doctor 3: Sama Hegazy
+                      Column(
+                        children: [
+                          Container(
+                            height: 200,
+                            width: 200,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(25),
+                              color: Colors.grey[300],
+                              image: DecorationImage(
+                                image: AssetImage("assets/sama.jpg"),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          SizedBox(height: 10),
+                          Text(
+                            "دكتور : سما حجازى",
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.brown,
+                            ),
+                            textAlign: TextAlign.center,
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 15),
                 ],
               ),
             ),

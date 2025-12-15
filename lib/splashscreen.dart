@@ -9,27 +9,50 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashscreenState extends State<Splashscreen> {
-  initState() {
+  @override
+  void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
-      Navigator.of(
-        context,
-      ).pushReplacement(MaterialPageRoute(builder: (context) => Onbording()));
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => const Onbording()),
+      );
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Image.asset(
-            'assets/logo.jpg',
-            height: double.infinity,
-            width: double.infinity,
-            fit: BoxFit.cover,
+      body: Stack(
+        children: [
+          /// الخلفية (الصورة تحت)
+          Positioned.fill(
+            child: Image.asset('assets/logo.jpg', fit: BoxFit.cover),
           ),
-        ),
+
+          /// النص فوق الصورة
+          Positioned(
+            bottom: 60, // تحكم في ارتفاع الكلمة من تحت
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Text(
+                'ذكرني',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black54,
+                      blurRadius: 6,
+                      offset: Offset(2, 2),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

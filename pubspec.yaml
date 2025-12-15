@@ -39,6 +39,9 @@ dependencies:
   shared_preferences: ^2.5.4
   audioplayers: ^6.5.1
   flutter_local_notifications: ^19.5.0
+  carousel_slider: ^5.1.1
+  # flutter_native_timezone: ^1.1.0
+
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +71,7 @@ flutter:
     - assets/Maryam.jpg
     - assets/Aslam.jpg
     - assets/logoElkollaya.jpg
+    - assets/test.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
